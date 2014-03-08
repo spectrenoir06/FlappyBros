@@ -37,15 +37,17 @@ function love.load(arg)
   Gamestate.registerEvents()
   cam = camera()
   
-  if love.system.getOS()=="Android" then 
+  --if love.system.getOS()=="Android" then 
     --cam:rotate (-math.pi/2)
     if SCREEN_PHONE_HEIGHT / SCREEN_PHONE_WIDTH == (16/9) then
       cam:lookAt(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+54/2)
     elseif SCREEN_PHONE_HEIGHT / SCREEN_PHONE_HEIGHT == (5/3) then
       cam:lookAt(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+    else
+      cam:lookAt(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
     end
     cam:zoom ((SCREEN_PHONE_WIDTH/SCREEN_WIDTH))
-  end
+  --end
   
   Gamestate.switch(credit)
 
