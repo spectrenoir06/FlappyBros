@@ -2,10 +2,11 @@ credit = {}
   
 
 function credit:init()
-  self.avatar = love.graphics.newImage("texture/avatar.png")
   
-  self.pos = {}
-  self.pos.X , self.pos.Y = 0-self.avatar:getWidth(),0-self.avatar:getHeight()
+    self.avatar = love.graphics.newImage("texture/avatar.png")
+  
+    self.pos = {}
+    self.pos.X , self.pos.Y = 0-self.avatar:getWidth(),0-self.avatar:getHeight()
   
     self.p = love.graphics.newParticleSystem( love.graphics.newImage("/texture/flame.png"), 10000 )
     self.p:setEmissionRate(1000)
@@ -28,8 +29,8 @@ function credit:enter(from,score)
 
   
   self.pos.X , self.pos.Y = 0-self.avatar:getWidth(),0-self.avatar:getHeight()
-  Timer.tween(5, self.pos, {X=SCREEN_WIDTH/2-100}, 'out-back')
-  Timer.tween(5, self.pos, {Y=SCREEN_HEIGHT/2-100}, 'bounce', function() self.p:stop() Timer.add(1,function() self.fini = true end) end)
+  Timer.tween(5, self.pos, {X=SCREEN_WIDTH/2-self.avatar:getWidth()/2}, 'out-back')
+  Timer.tween(5, self.pos, {Y=SCREEN_HEIGHT/2-self.avatar:getHeight()/2}, 'bounce', function() self.p:stop() Timer.add(2,function() self.fini = true end) end)
   self.p:start()
   self.fini = false
   
@@ -44,7 +45,7 @@ function credit:draw()
   love.graphics.setFont(font2)
   love.graphics.setColor( 200, 0, 0, 255 )
   love.graphics.print("Spectrenoir",self.pos.X-90,self.pos.Y + 150)
-    love.graphics.setFont(font)
+  love.graphics.setFont(font)
   love.graphics.setColor( 255,255, 255, 255 )
   
   cam:detach()
@@ -55,13 +56,14 @@ function credit:update(dt)
 
   Timer.update(dt)
   self.p:update(dt)
+  if self.fini then
+    Gamestate.switch(start)
+  end
 end
 
 
 function credit:mousepressed(Sx, Sy, button)
-  if button and self.fini then
-    Gamestate.switch(start)
-  end
+
 end
 
 
