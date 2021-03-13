@@ -21,7 +21,7 @@ SCREEN_WIDTH  = 480
 
 
 font = love.graphics.newFont( "font/ka1.ttf", 72 )
-font2 = love.graphics.newFont( "font/ka1.ttf", 35 )
+font2 = love.graphics.newFont( "font/ka1.ttf", 36 )
 
 
 

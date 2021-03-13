@@ -13,7 +13,7 @@ function start:init()
   self.rideauPos.Y = 0
   
   self.alpha = {}
-  self.alpha.val = 255
+  self.alpha.val = 1
   
   self.tilePos = {}
   self.tilePos.Y = 0 - self.title:getHeight()
@@ -56,7 +56,7 @@ function start:draw()
   
   love.graphics.setColor( 0, 0, 0, self.alpha.val )
   love.graphics.rectangle( "fill", 0, 0, 480, 854 )
-  love.graphics.setColor( 255, 255, 255, 255 )
+  love.graphics.setColor( 1, 1, 1, 1 )
   love.graphics.draw(self.sol,0,768)
   love.graphics.draw(self.rideau,0,self.rideauPos.Y)
   

@@ -43,10 +43,10 @@ function credit:draw()
   love.graphics.draw(self.p, 0, 0)
   love.graphics.draw( self.avatar, self.pos.X , self.pos.Y  )
   love.graphics.setFont(font2)
-  love.graphics.setColor( 200, 0, 0, 255 )
+  love.graphics.setColor( 200/255, 0, 0, 1 )
   love.graphics.print("Spectrenoir",self.pos.X-90,self.pos.Y + 150)
   love.graphics.setFont(font)
-  love.graphics.setColor( 255,255, 255, 255 )
+  love.graphics.setColor(1,1,1,1)
   
   cam:detach()
 end

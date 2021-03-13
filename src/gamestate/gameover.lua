@@ -21,7 +21,7 @@ function gameover:enter(from,score)
   self.score = score
   self.alpha = {}
   self.alpha.val = 0
-  Timer.tween(1, self.alpha, {val=200}, 'linear')
+  Timer.tween(1, self.alpha, {val=1}, 'linear')
 end
 
 function gameover:draw()
@@ -35,7 +35,7 @@ function gameover:draw()
   
   love.graphics.setColor( 0, 0, 0, self.alpha.val )
   love.graphics.rectangle( "fill", 0, 0, 480, 854 )
-  love.graphics.setColor( 255, 255, 255, 255 )
+  love.graphics.setColor( 1, 1, 1, 1 )
   
   love.graphics.draw(self.menu,SCREEN_WIDTH/2 - (self.menu:getWidth()/2),SCREEN_HEIGHT/2 - (self.menu:getHeight()/2))
   love.graphics.setFont(font2)

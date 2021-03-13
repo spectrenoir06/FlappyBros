@@ -74,9 +74,9 @@ function Game:draw()
   end
 
   love.graphics.setFont(font)
-  love.graphics.setColor( 0, 0, 0, 255 )
+  love.graphics.setColor( 0, 0, 0, 1 )
   love.graphics.print(self.score , 200 , 50)
-  love.graphics.setColor( 255, 255, 255, 255 )
+  love.graphics.setColor( 1, 1, 1, 1 )
 end
 
 
